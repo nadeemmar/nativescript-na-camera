@@ -82,9 +82,9 @@ NACamera.Camera = (function(_super) {
   Camera.prototype._init = function() {
     const nativeView = this.ios;
     
-    if(typeof _session === "undefined") _session = new AVCaptureSession();
-    if(typeof _device === "undefined") _device = deviceWithPosition(AVCaptureDevicePositionBack);
-    if(typeof _input === "undefined") _input = AVCaptureDeviceInput.deviceInputWithDeviceError(_device, null);
+    _session = new AVCaptureSession();
+    _device = deviceWithPosition(AVCaptureDevicePositionBack);
+    _input = AVCaptureDeviceInput.deviceInputWithDeviceError(_device, null);
     
     if(_input) {
       _session.addInput(_input);
